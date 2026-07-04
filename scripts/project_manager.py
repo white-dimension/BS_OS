@@ -1,5 +1,5 @@
 """
-BS_OS Project Manager v0.4-alpha
+BS_OS Project Manager v0.4-beta
 
 Create a standard design project folder from config/project_template.json.
 
@@ -25,8 +25,11 @@ from typing import Any, Dict, List
 ROOT_DIR = Path(__file__).resolve().parent.parent
 PROJECT_TEMPLATE_FILE = ROOT_DIR / "config" / "project_template.json"
 PATHS_FILE = ROOT_DIR / "config" / "paths.json"
+DATA_DIR = ROOT_DIR / "data"
+RECENT_PROJECTS_FILE = DATA_DIR / "recent_projects.json"
 LOG_DIR = ROOT_DIR / "logs"
 LOG_FILE = LOG_DIR / "project_manager.log"
+MAX_RECENT_PROJECTS = 20
 
 
 def read_json(path: Path) -> Dict[str, Any]:
@@ -35,6 +38,7 @@ def read_json(path: Path) -> Dict[str, Any]:
 
 
 def write_json(path: Path, data: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as file:
         json.dump(data, file, ensure_ascii=False, indent=2)
         file.write("\n")
@@ -64,6 +68,48 @@ def write_log(lines: List[str]) -> None:
         file.write("\n" + "-" * 60 + "\n")
 
 
+def load_recent_projects() -> Dict[str, Any]:
+    if not RECENT_PROJECTS_FILE.exists():
+        return {
+            "schema_version": "0.1",
+            "description": "Recent projects recorded by BS_OS Project Manager.",
+            "projects": [],
+        }
+    try:
+        return read_json(RECENT_PROJECTS_FILE)
+    except Exception:
+        return {
+            "schema_version": "0.1",
+            "description": "Recent projects recorded by BS_OS Project Manager.",
+            "projects": [],
+        }
+
+
+def record_recent_project(project_data: Dict[str, Any], project_root: Path) -> None:
+    recent = load_recent_projects()
+    projects = recent.get("projects", [])
+    path_text = str(project_root)
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    projects = [item for item in projects if item.get("path") != path_text]
+    projects.insert(
+        0,
+        {
+            "project_name": project_data.get("project_name", ""),
+            "client": project_data.get("client", ""),
+            "designer": project_data.get("designer", ""),
+            "stage": project_data.get("stage", ""),
+            "path": path_text,
+            "project_file": str(project_root / "project.json"),
+            "last_opened_at": now,
+            "created_at": project_data.get("created_at", now),
+        },
+    )
+
+    recent["projects"] = projects[:MAX_RECENT_PROJECTS]
+    write_json(RECENT_PROJECTS_FILE, recent)
+
+
 def create_project(args: argparse.Namespace) -> Path:
     template = read_json(PROJECT_TEMPLATE_FILE)
     root = Path(args.root).expanduser() if args.root else get_default_projects_root()
@@ -87,12 +133,13 @@ def create_project(args: argparse.Namespace) -> Path:
             "stage": args.stage or project_data.get("stage", "concept"),
             "created_at": now,
             "updated_at": now,
-            "created_by": "BS_OS Project Manager v0.4-alpha",
+            "created_by": "BS_OS Project Manager v0.4-beta",
         }
     )
 
     project_file_name = template.get("project_file", "project.json")
     write_json(project_root / project_file_name, project_data)
+    record_recent_project(project_data, project_root)
 
     lines = [
         "BS_OS Project Manager",
@@ -101,6 +148,7 @@ def create_project(args: argparse.Namespace) -> Path:
         f"Root: {project_root}",
         f"Folders created: {len(folders)}",
         f"Project file: {project_root / project_file_name}",
+        f"Recent projects file: {RECENT_PROJECTS_FILE}",
     ]
     write_log(lines)
     return project_root
