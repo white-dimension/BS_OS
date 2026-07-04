@@ -1,0 +1,34 @@
+{
+  "version": "0.3",
+  "description": "CAD Bridge configuration for connecting BS_OS with AutoCAD and BS-CAD-Tools.",
+  "autocad": {
+    "process_names": [
+      "acad.exe"
+    ],
+    "executable_path": "",
+    "startup_mode": "detect_running_first",
+    "open_autocad_if_not_running": false
+  },
+  "bs_cad_tools": {
+    "local_path": "../BS-CAD-Tools",
+    "main_loader": "BS_CAD_TOOLS_LOAD.lsp",
+    "commands": [
+      "BS_LAYER",
+      "BS_CHECK",
+      "BS_FIX_LAYER",
+      "BS_FIX_MISSING",
+      "BS_TEMPLATE_CHECK"
+    ]
+  },
+  "bs_cad_standard": {
+    "local_path": "../BS-CAD-Standard",
+    "standard_version": "v0.8-template",
+    "sync_on_launch": true
+  },
+  "bridge_behavior": {
+    "show_status_before_launch": true,
+    "write_temp_script": true,
+    "temp_script_path": "temp/bs_os_cad_bridge.scr",
+    "log_path": "logs/cad_bridge.log"
+  }
+}
