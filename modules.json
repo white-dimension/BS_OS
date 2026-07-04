@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1",
+  "schema_version": "0.2",
   "description": "BS_OS module registry. BS_OS reads this file to generate launcher entries.",
   "modules": [
     {
@@ -13,6 +13,18 @@
       "config": "config/ime.json",
       "enabled": true,
       "status": "completed_baseline"
+    },
+    {
+      "id": "bs-cad-bridge",
+      "name": "BS CAD Bridge Check",
+      "type": "cad_bridge",
+      "category": "CAD",
+      "description": "Checks local BS-CAD-Tools and BS-CAD-Standard paths before real AutoCAD loading integration.",
+      "repo": "white-dimension/BS_OS",
+      "entry": "modules/cad/check_cad_bridge.bat",
+      "config": "config/cad_bridge.json",
+      "enabled": true,
+      "status": "v0.3_basic"
     },
     {
       "id": "bs-cad-tools",
