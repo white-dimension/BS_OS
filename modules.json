@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.2",
+  "schema_version": "0.3",
   "description": "BS_OS module registry. BS_OS reads this file to generate launcher entries.",
   "modules": [
     {
@@ -57,10 +57,10 @@
       "category": "Project",
       "description": "Create and open standard project folders for design workflow.",
       "repo": "white-dimension/BS_OS",
-      "entry": "modules/project-manager/start.bat",
+      "entry": "modules/project-manager/start_ui.bat",
       "config": "config/project_template.json",
       "enabled": true,
-      "status": "planned"
+      "status": "v0.4_alpha"
     },
     {
       "id": "bs-design-copilot",
