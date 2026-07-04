@@ -1,0 +1,14 @@
+{
+  "project_name": "示例展厅项目",
+  "client": "示例客户",
+  "designer": "BS Design",
+  "stage": "concept",
+  "cad_standard_version": "v0.8-template",
+  "active_modules": [
+    "bs-cad-tools",
+    "bs-cad-standard",
+    "bs-ime-assistant"
+  ],
+  "created_at": "2026-07-04",
+  "updated_at": "2026-07-04"
+}
