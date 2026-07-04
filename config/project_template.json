@@ -1,0 +1,38 @@
+{
+  "template_name": "BS Standard Design Project",
+  "version": "0.1",
+  "description": "Standard project folder structure for exhibition, commercial and interior design workflow.",
+  "folders": [
+    "01_资料",
+    "01_资料/甲方资料",
+    "01_资料/现场照片",
+    "01_资料/参考资料",
+    "02_CAD",
+    "02_CAD/原始图",
+    "02_CAD/方案图",
+    "02_CAD/施工图",
+    "03_模型",
+    "03_模型/3dsMax",
+    "03_模型/材质贴图",
+    "04_效果图",
+    "04_效果图/过程图",
+    "04_效果图/最终图",
+    "05_文本",
+    "05_文本/设计说明",
+    "05_文本/报价清单",
+    "06_输出",
+    "06_输出/PDF",
+    "06_输出/打包文件",
+    "99_归档"
+  ],
+  "project_file": "project.json",
+  "default_project_data": {
+    "project_name": "",
+    "client": "",
+    "designer": "",
+    "stage": "concept",
+    "cad_standard_version": "v0.8-template",
+    "created_at": "",
+    "updated_at": ""
+  }
+}
