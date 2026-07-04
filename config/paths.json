@@ -1,0 +1,21 @@
+{
+  "paths": {
+    "workspace_root": "D:/BS_OS_Workspace",
+    "projects_root": "D:/BS_Projects",
+    "modules_root": "./modules",
+    "logs_root": "./logs",
+    "assets_root": "./assets"
+  },
+  "external_apps": {
+    "autocad": "",
+    "3ds_max": "",
+    "corona": "",
+    "photoshop": ""
+  },
+  "repositories": {
+    "bs_os": "white-dimension/BS_OS",
+    "bs_cad_standard": "white-dimension/BS-CAD-Standard",
+    "bs_cad_tools": "white-dimension/BS-CAD-Tools",
+    "bs_ime_assistant": "white-dimension/BS-IME-Assistant"
+  }
+}
