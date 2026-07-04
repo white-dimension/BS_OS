@@ -3,7 +3,7 @@
 ## Current Version
 
 ```text
-v0.3-cad-bridge-basic
+v0.3-cad-bridge-loader-entry
 ```
 
 ## Completed
@@ -40,17 +40,26 @@ v0.3-cad-bridge-basic
 - [x] Write CAD Bridge log file
 - [x] Add `docs/CAD_BRIDGE.md`
 
+### v0.3 CAD Bridge Loader Entry
+
+- [x] Add `BS_CAD_TOOLS_LOAD.lsp` to `white-dimension/BS-CAD-Tools`
+- [x] Add `BS_TOOLS_STATUS` command placeholder
+- [x] Add `BS_RELOAD_TOOLS` command placeholder
+- [x] Add safe-load function template
+- [x] Add `docs/BS_OS_BRIDGE.md` to BS-CAD-Tools
+
 ## Next: v0.3 CAD Bridge Real Loading
 
 ### Goal
 
-Connect BS_OS to real AutoCAD workflow.
+Connect BS_OS to real AutoCAD command files.
 
 ### Tasks
 
-- [ ] Add real `BS_CAD_TOOLS_LOAD.lsp` in BS-CAD-Tools
+- [ ] Map actual BS-CAD-Tools command file paths
+- [ ] Connect actual command files inside `BS_CAD_TOOLS_LOAD.lsp`
 - [ ] Generate AutoCAD script file from BS_OS
-- [ ] Add manual AutoCAD load instructions
+- [ ] Add manual AutoCAD load instructions in BS_OS
 - [ ] Add AutoCAD executable path config UI
 - [ ] Detect whether AutoCAD is running
 - [ ] Add BS-CAD-Standard sync logic
