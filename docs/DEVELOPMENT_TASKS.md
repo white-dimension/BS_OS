@@ -3,7 +3,7 @@
 ## Current Version
 
 ```text
-v0.4-project-manager-alpha
+v0.4-project-manager-beta
 ```
 
 ## Completed
@@ -62,6 +62,16 @@ v0.4-project-manager-alpha
 - [x] Point Project Manager module to UI entry in `modules.json`
 - [x] Add `docs/PROJECT_MANAGER.md`
 
+### v0.4 Project Manager Beta
+
+- [x] Add `data/recent_projects.json`
+- [x] Record created projects into Recent Projects
+- [x] Keep latest 20 recent projects
+- [x] Add `recent_projects_ui.py`
+- [x] Add `modules/project-manager/recent_projects.bat`
+- [x] Register `BS Recent Projects` in `modules.json`
+- [x] Add `docs/RECENT_PROJECTS.md`
+
 ## Tomorrow Verification Checklist
 
 - [ ] Pull latest `BS_OS`
@@ -74,22 +84,25 @@ v0.4-project-manager-alpha
 - [ ] Confirm `project.json` is created
 - [ ] Confirm project folder opens automatically
 - [ ] Confirm `logs/project_manager.log` is written
+- [ ] Confirm `data/recent_projects.json` records the test project
+- [ ] Launch `BS Recent Projects`
+- [ ] Confirm test project appears
+- [ ] Double-click recent project and confirm folder opens
 - [ ] Run `BS CAD Bridge Check`
 - [ ] Confirm CAD Bridge path report
 
-## Next: v0.4 Project Manager Beta
+## Next: v0.4 Project Manager Beta Fixes
 
 ### Goal
 
-Improve Project Manager after first local test.
+Fix local issues after first Windows test.
 
 ### Tasks
 
-- [ ] Add recent projects list
-- [ ] Add open existing project
-- [ ] Add template selection
-- [ ] Add project stage presets for interior / exhibition workflow
-- [ ] Add one-click workflow: create project + open CAD + start IME
+- [ ] Update `last_opened_at` when reopening a project
+- [ ] Add remove-from-recent action
+- [ ] Add pin project action
+- [ ] Add project search
 - [ ] Add validation for duplicate project names
 - [ ] Add settings UI for default projects root
 
