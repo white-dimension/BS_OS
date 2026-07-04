@@ -3,7 +3,7 @@
 ## Current Version
 
 ```text
-v0.3-cad-bridge-loader-entry
+v0.4-project-manager-alpha
 ```
 
 ## Completed
@@ -48,6 +48,51 @@ v0.3-cad-bridge-loader-entry
 - [x] Add safe-load function template
 - [x] Add `docs/BS_OS_BRIDGE.md` to BS-CAD-Tools
 
+### v0.4 Project Manager Alpha
+
+- [x] Add `scripts/project_manager.py`
+- [x] Add command-line project creation
+- [x] Read `config/project_template.json`
+- [x] Create standard folder structure
+- [x] Write `project.json`
+- [x] Write `logs/project_manager.log`
+- [x] Add `project_manager_ui.py`
+- [x] Add `modules/project-manager/start_ui.bat`
+- [x] Add `modules/project-manager/create_project.bat`
+- [x] Point Project Manager module to UI entry in `modules.json`
+- [x] Add `docs/PROJECT_MANAGER.md`
+
+## Tomorrow Verification Checklist
+
+- [ ] Pull latest `BS_OS`
+- [ ] Run `run_bs_os.bat`
+- [ ] Confirm launcher opens
+- [ ] Confirm `BS Project Manager` appears
+- [ ] Launch `BS Project Manager`
+- [ ] Create a test project
+- [ ] Confirm folders are created
+- [ ] Confirm `project.json` is created
+- [ ] Confirm project folder opens automatically
+- [ ] Confirm `logs/project_manager.log` is written
+- [ ] Run `BS CAD Bridge Check`
+- [ ] Confirm CAD Bridge path report
+
+## Next: v0.4 Project Manager Beta
+
+### Goal
+
+Improve Project Manager after first local test.
+
+### Tasks
+
+- [ ] Add recent projects list
+- [ ] Add open existing project
+- [ ] Add template selection
+- [ ] Add project stage presets for interior / exhibition workflow
+- [ ] Add one-click workflow: create project + open CAD + start IME
+- [ ] Add validation for duplicate project names
+- [ ] Add settings UI for default projects root
+
 ## Next: v0.3 CAD Bridge Real Loading
 
 ### Goal
@@ -65,21 +110,6 @@ Connect BS_OS to real AutoCAD command files.
 - [ ] Add BS-CAD-Standard sync logic
 - [ ] Add CAD Tools status display in launcher
 - [ ] Add error messages for missing paths
-
-## Next: v0.4 Project Manager
-
-### Goal
-
-Create standard project folders from BS_OS.
-
-### Tasks
-
-- [ ] Build project creation window
-- [ ] Input project name / client / designer / stage
-- [ ] Read `config/project_template.json`
-- [ ] Create folders
-- [ ] Write `project.json`
-- [ ] Open project root folder after creation
 
 ## Later
 
