@@ -1,0 +1,17 @@
+{
+  "app_name": "BS_OS",
+  "version": "0.1-structure",
+  "mode": "launcher",
+  "language": "zh-CN",
+  "theme": "system",
+  "startup": {
+    "load_enabled_modules": true,
+    "check_paths_on_startup": true,
+    "show_disabled_modules": true
+  },
+  "ui": {
+    "default_page": "dashboard",
+    "module_grouping": "category",
+    "show_module_status": true
+  }
+}
