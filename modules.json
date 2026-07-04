@@ -1,0 +1,78 @@
+{
+  "schema_version": "0.1",
+  "description": "BS_OS module registry. BS_OS reads this file to generate launcher entries.",
+  "modules": [
+    {
+      "id": "bs-ime-assistant",
+      "name": "BS IME Assistant",
+      "type": "background_app",
+      "category": "Input",
+      "description": "CAD / design workflow Chinese-English input switching assistant. Runs in background.",
+      "repo": "white-dimension/BS-IME-Assistant",
+      "entry": "modules/ime/start.bat",
+      "config": "config/ime.json",
+      "enabled": true,
+      "status": "completed_baseline"
+    },
+    {
+      "id": "bs-cad-tools",
+      "name": "BS CAD Tools",
+      "type": "cad_plugin",
+      "category": "CAD",
+      "description": "AutoCAD efficiency commands and CAD standard tools. Loads LISP / plugin commands into AutoCAD.",
+      "repo": "white-dimension/BS-CAD-Tools",
+      "entry": "modules/cad/load_cad_tools.bat",
+      "config": "config/cad_tools.json",
+      "enabled": true,
+      "status": "active_development"
+    },
+    {
+      "id": "bs-cad-standard",
+      "name": "BS CAD Standard",
+      "type": "standard_pack",
+      "category": "CAD",
+      "description": "CAD layer standard, template rules, text styles, dimension styles and CTB configuration.",
+      "repo": "white-dimension/BS-CAD-Standard",
+      "entry": "modules/cad/open_standard_folder.bat",
+      "config": "config/cad_standard.json",
+      "enabled": true,
+      "status": "active_development"
+    },
+    {
+      "id": "bs-project-manager",
+      "name": "BS Project Manager",
+      "type": "project_tool",
+      "category": "Project",
+      "description": "Create and open standard project folders for design workflow.",
+      "repo": "white-dimension/BS_OS",
+      "entry": "modules/project-manager/start.bat",
+      "config": "config/project_template.json",
+      "enabled": true,
+      "status": "planned"
+    },
+    {
+      "id": "bs-design-copilot",
+      "name": "BS Design Copilot",
+      "type": "floating_assistant",
+      "category": "Design",
+      "description": "Context-aware floating assistant for CAD, rendering, material, modeling and design knowledge prompts.",
+      "repo": "white-dimension/BS_OS",
+      "entry": "modules/design-copilot/start.bat",
+      "config": "config/design_copilot.json",
+      "enabled": false,
+      "status": "future_backlog"
+    },
+    {
+      "id": "bs-max-assistant",
+      "name": "BS Max Assistant",
+      "type": "max_plugin",
+      "category": "3ds Max",
+      "description": "3ds Max / Corona workflow assistant. Future module.",
+      "repo": "white-dimension/BS_OS",
+      "entry": "modules/max/start.bat",
+      "config": "config/max.json",
+      "enabled": false,
+      "status": "future_backlog"
+    }
+  ]
+}
