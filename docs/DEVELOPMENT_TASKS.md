@@ -3,10 +3,12 @@
 ## Current Version
 
 ```text
-v0.2-launcher-basic
+v0.3-cad-bridge-basic
 ```
 
 ## Completed
+
+### v0.1 Structure
 
 - [x] Create repository structure
 - [x] Add README
@@ -14,6 +16,9 @@ v0.2-launcher-basic
 - [x] Add config templates
 - [x] Add architecture documentation
 - [x] Add module specification
+
+### v0.2 Launcher Basic
+
 - [x] Add Python Tkinter launcher
 - [x] Read modules.json
 - [x] Display module list
@@ -23,7 +28,19 @@ v0.2-launcher-basic
 - [x] Add Windows run script
 - [x] Add placeholder module startup scripts
 
-## Next: v0.3 CAD Bridge
+### v0.3 CAD Bridge Basic
+
+- [x] Add `config/cad_bridge.json`
+- [x] Add `scripts/cad_bridge.py`
+- [x] Add `modules/cad/check_cad_bridge.bat`
+- [x] Register `BS CAD Bridge Check` in `modules.json`
+- [x] Check BS-CAD-Tools local path
+- [x] Check BS-CAD-Standard local path
+- [x] Check expected CAD tools loader path
+- [x] Write CAD Bridge log file
+- [x] Add `docs/CAD_BRIDGE.md`
+
+## Next: v0.3 CAD Bridge Real Loading
 
 ### Goal
 
@@ -31,12 +48,13 @@ Connect BS_OS to real AutoCAD workflow.
 
 ### Tasks
 
+- [ ] Add real `BS_CAD_TOOLS_LOAD.lsp` in BS-CAD-Tools
+- [ ] Generate AutoCAD script file from BS_OS
+- [ ] Add manual AutoCAD load instructions
+- [ ] Add AutoCAD executable path config UI
 - [ ] Detect whether AutoCAD is running
-- [ ] Locate AutoCAD executable path
-- [ ] Locate BS-CAD-Tools local folder
-- [ ] Add real LISP loading script
 - [ ] Add BS-CAD-Standard sync logic
-- [ ] Add CAD Tools status display
+- [ ] Add CAD Tools status display in launcher
 - [ ] Add error messages for missing paths
 
 ## Next: v0.4 Project Manager
@@ -60,5 +78,5 @@ Create standard project folders from BS_OS.
 - [ ] Add icons
 - [ ] Add dark theme
 - [ ] Add module enable / disable editing UI
-- [ ] Add logs
+- [ ] Add logs panel
 - [ ] Add auto-update concept
